@@ -11,7 +11,10 @@ struct Color {
     let alpha: CGFloat = 1.0
     
     var displayColor: NSColor {
-        return NSColor(calibratedRed: red, green: green, blue: blue, alpha: alpha)
+        return NSColor(calibratedRed: red,
+                       green: green,
+                       blue: blue,
+                       alpha: alpha)
     }
 }
 
@@ -39,7 +42,7 @@ class BarView: NSView {
     }
     
     required init?(coder: NSCoder) {
-        self.color = NSColor.red
+        self.color = .red
         super.init(coder: coder)
     }
     
@@ -67,7 +70,7 @@ class BarChart: NSView {
     }
     
     required init?(coder: NSCoder) {
-        self.color = NSColor.white
+        self.color = .white
         super.init(coder: coder)
     }
     
@@ -86,11 +89,18 @@ class BarChart: NSView {
             
             var xOrigin: CGFloat = interBarMargin
             
+            let margins = interBarMargin * (barCount+1)
+            let width = (frame.width - margins) / barCount
+            
             for bar in bars {
-                let width = (frame.width - (interBarMargin * (barCount+1))) / barCount
+                
                 let height = barHeight(forValue: bar.value)
-                let rect = NSRect(x: xOrigin, y: 0, width: width, height: height)
-                let view = BarView(frame: rect, color: bar.color.displayColor)
+                let rect = NSRect(x: xOrigin,
+                                  y: 0,
+                                  width: width,
+                                  height: height)
+                let view = BarView(frame: rect,
+                                   color: bar.color.displayColor)
                 barViews.append(view)
                 addSubview(view)
                 
@@ -122,7 +132,9 @@ class BarChart: NSView {
  * Create Bars and add to chart
  * Make Bar Chart the LiveView
  */
-let barView = BarChart(frame: CGRect(x: 0, y: 0, width: 300, height: 300), color: .white)
+let frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+let barView = BarChart(frame: frame,
+                       color: .white)
 PlaygroundPage.current.liveView = barView
 
 let bar1 = Bar(value: 20, color: Color(red: 1, green: 0, blue: 0))
