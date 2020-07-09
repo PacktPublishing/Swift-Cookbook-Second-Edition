@@ -25,7 +25,7 @@ class BarView: UIView {
     }
     
     private func setupTexture() {
-        let textureImage = UIImage(named: "texture")!
+        guard let textureImage = UIImage(named: "texture") else { return }
         let textureColor = UIColor(patternImage: textureImage)
         let textureView = UIView(frame: CGRect(origin: .zero, size: bounds.size))
         textureView.backgroundColor = textureColor
@@ -34,6 +34,11 @@ class BarView: UIView {
 }
 
 public class BarChart: UIView {
+    
+    private var barViews: [BarView] = []
+    private var maxValue: Float = 0.0
+    
+    var interBarMargin: CGFloat = 5.0
     
     public var bars: [Bar] = [] {
         didSet {
@@ -50,11 +55,18 @@ public class BarChart: UIView {
             
             var xOrigin: CGFloat = interBarMargin
             
+            let margins = interBarMargin * (barCount+1)
+            let width = (frame.width - margins) / barCount
+            
             for bar in bars {
-                let width = (frame.width - (interBarMargin * (barCount+1))) / barCount
+                
                 let height = barHeight(forValue: bar.value)
-                let rect = CGRect(x: xOrigin, y: bounds.height - height, width: width, height: height)
-                let view = BarView(frame: rect, color: bar.color.displayColor)
+                let rect = CGRect(x: xOrigin,
+                                  y: bounds.height - height,
+                                  width: width,
+                                  height: height)
+                let view = BarView(frame: rect,
+                                   color: bar.color.displayColor)
                 barViews.append(view)
                 addSubview(view)
                 
@@ -63,10 +75,6 @@ public class BarChart: UIView {
             self.barViews = barViews
         }
     }
-    var interBarMargin: CGFloat = 5.0
-    
-    private var barViews: [BarView] = []
-    private var maxValue: Float = 0.0
     
     private func barHeight(forValue value: Float) -> CGFloat {
         return (frame.size.height / CGFloat(maxValue)) * CGFloat(value)
