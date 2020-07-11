@@ -1,49 +1,50 @@
-
 /*:
  # Crypto Currencies
  ## Bitcoin
- 
- * Create Bar Chart
- * Create Bars and add to chart
- * Make Bar Chart the LiveView
  */
 
 import PlaygroundSupport
 import UIKit
 
 /*:
- ## Usage
- 
+ ### Usage
  * Create Bar Chart
  * Create Bars and add to chart
  * Make Bar Chart the LiveView
  */
 
-let barView = BarChart(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+let frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+let barView = BarChart(frame: frame)
 barView.backgroundColor = .white
 
-let green =  Color(red: 0, green: 1, blue: 0, alpha: 1.0)
+let green =  Color(red: 0, green: 1, blue: 0)
 
 /*:
-
  * Note: 
  Bitcoin Price (in USD)
- - Jan 2017 -  $970.17
- - Feb 2017 -  $960.05
- - Mar 2017 - $1203.02
- - Apr 2017 - $1076.90
- - May 2017 - $1390.24
- - Jun 2017 - $2414.11
+ - Jan 2020 -  $9,388.88
+ - Feb 2020 -  $8,639.59
+ - Mar 2020 - $6,483.74
+ - Apr 2020 - $8,773.11
+ - May 2020 - $9,437.05
+ - Jun 2020 - $9,164.54
+ 
+ Taken from [Statista](https://www.statista.com/statistics/326707/bitcoin-price-index)
  */
 
-let jan2017 = Bar(value: 970.17, color: green)
-let feb2017 = Bar(value: 960.05, color: green)
-let mar2017 = Bar(value: 1203.02, color: green)
-let apr2017 = Bar(value: 1076.90, color: green)
-let may2017 = Bar(value: 1390.24, color: green)
-let jun2017 = Bar(value: 2414.11, color: green)
+let jan2020 = Bar(value: 9388.88, color: green)
+let feb2020 = Bar(value: 8639.59, color: green)
+let mar2020 = Bar(value: 6483.74, color: green)
+let apr2020 = Bar(value: 8773.11, color: green)
+let may2020 = Bar(value: 9437.05, color: green)
+let jun2020 = Bar(value: 9164.54, color: green)
 
-barView.bars = [jan2017, feb2017, mar2017, apr2017, may2017, jun2017]
+barView.bars = [jan2020,
+                feb2020,
+                mar2020,
+                apr2020,
+                may2020,
+                jun2020]
 
 PlaygroundPage.current.liveView = barView
 

@@ -1,20 +1,44 @@
 //: [Previous](@previous)
 
+/*:
+ # Crypto Currencies
+ ## Lightcoin
+ */
+
 import PlaygroundSupport
 import UIKit
 
-let barView = BarChart(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+let frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+let barView = BarChart(frame: frame)
 barView.backgroundColor = .white
 
-let red =  Color(red: 1, green: 0, blue: 0, alpha: 1.0)
+let red =  Color(red: 1, green: 0, blue: 0)
 
-let jan2017 = Bar(value: 4.32, color: red)
-let feb2017 = Bar(value: 3.99, color: red)
-let mar2017 = Bar(value: 3.77, color: red)
-let apr2017 = Bar(value: 7.43, color: red)
-let may2017 = Bar(value: 15.42, color: red)
-let jun2017 = Bar(value: 26.44, color: red)
+/*:
+ * Note:
+ Lightcoin Price (in USD)
+ - Jan 2020 -  $67.58
+ - Feb 2020 -  $58.09
+ - Mar 2020 - $39.13
+ - Apr 2020 - $46.19
+ - May 2020 - $44.23
+ - Jun 2020 - $41.21
+ 
+ Taken from [Statista](https://www.statista.com/statistics/807160/litecoin-price-monthly)
+ */
 
-barView.bars = [jan2017, feb2017, mar2017, apr2017, may2017, jun2017]
+let jan2020 = Bar(value: 67.58, color: red)
+let feb2020 = Bar(value: 58.09, color: red)
+let mar2020 = Bar(value: 39.13, color: red)
+let apr2020 = Bar(value: 46.19, color: red)
+let may2020 = Bar(value: 44.23, color: red)
+let jun2020 = Bar(value: 41.21, color: red)
+
+barView.bars = [jan2020,
+                feb2020,
+                mar2020,
+                apr2020,
+                may2020,
+                jun2020]
 
 PlaygroundPage.current.liveView = barView
