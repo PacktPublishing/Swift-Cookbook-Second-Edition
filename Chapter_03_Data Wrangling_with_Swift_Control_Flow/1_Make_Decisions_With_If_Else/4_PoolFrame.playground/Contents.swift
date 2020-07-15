@@ -18,7 +18,7 @@ func printBallTypeOfPlayer1(forTable table: PoolTable) {
     if let frame = table.currentFrame, let ballType = frame.player1BallType {
         print(ballType.rawValue)
     } else {
-        print("Player 1 doesn't yet have a ball type or there is no current frame")
+        print("Player 1 has no ball type or there is no current frame")
     }
 }
 
@@ -29,7 +29,7 @@ let table = PoolTable()
 table.currentFrame = nil
 
 printBallTypeOfPlayer1(forTable: table)
-// Player 1 doesn't yet have a ball type or there is no current frame
+// Player 1 has no ball type or there is no current frame
 
 //
 // Table with frame in play, but no balls potted
@@ -41,7 +41,7 @@ frame.player2BallType = nil
 table.currentFrame = frame
 
 printBallTypeOfPlayer1(forTable: table)
-// Player 1 doesn't yet have a ball type or there is no current frame
+// Player 1 has no ball type or there is no current frame
 
 //
 // Table with frame in play, and a ball potted
