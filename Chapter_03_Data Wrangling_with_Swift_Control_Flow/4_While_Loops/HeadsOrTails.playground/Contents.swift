@@ -21,3 +21,4 @@ func howManyHeadsInARow() -> Int {
 }
 
 let noOfHeads = howManyHeadsInARow()
+print(noOfHeads)
