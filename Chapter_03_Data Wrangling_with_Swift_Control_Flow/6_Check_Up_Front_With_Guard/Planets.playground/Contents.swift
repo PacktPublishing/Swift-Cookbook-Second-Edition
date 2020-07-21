@@ -1,39 +1,71 @@
 
-// From http://idahoptv.org/ntti/nttilessons/lessons2000/lau1.html
+// From https://en.wikipedia.org/wiki/Solar_System
 let inputData: [[String: Any]] = [
-    ["name": "Mercury", "positionFromSun": 1, "diameterInKMs": 4800, "distanceFromSunInAUs": 0.387, "hasRings": false],
-    ["name": "Venus", "positionFromSun": 2, "diameterInKMs": 12100, "distanceFromSunInAUs": 0.723, "hasRings": false],
-    ["name": "Earth", "positionFromSun": 3, "diameterInKMs": 12750, "distanceFromSunInAUs": 1.0, "hasRings": false],
-    ["name": "Mars", "positionFromSun": 4, "diameterInKMs": 6800, "distanceFromSunInAUs": 1.524, "hasRings": false],
-    ["name": "Jupiter", "positionFromSun": 5, "diameterInKMs": 142800, "distanceFromSunInAUs": 5.203, "hasRings": false],
-    ["name": "Saturn", "positionFromSun": 6, "diameterInKMs": 120660, "distanceFromSunInAUs": 9.523, "hasRings": true],
-    ["name": "Uranus", "positionFromSun": 7, "diameterInKMs": 51800, "distanceFromSunInAUs": 19.208, "hasRings": false],
-    ["name": "Neptune", "positionFromSun": 8, "diameterInKMs": 49500, "distanceFromSunInAUs": 30.087, "hasRings": false]
+    ["name": "Mercury",
+     "positionFromSun": 1,
+     "fractionOfEarthMass": 0.055,
+     "distanceFromSunInAUs": 0.4,
+     "hasRings": false],
+    ["name": "Venus",
+     "positionFromSun": 2,
+     "fractionOfEarthMass": 0.815,
+     "distanceFromSunInAUs": 0.7,
+     "hasRings": false],
+    ["name": "Earth",
+     "positionFromSun": 3,
+     "fractionOfEarthMass": 1.0,
+     "distanceFromSunInAUs": 1.0,
+     "hasRings": false],
+    ["name": "Mars",
+     "positionFromSun": 4,
+     "fractionOfEarthMass": 0.107,
+     "distanceFromSunInAUs": 1.5,
+     "hasRings": false],
+    ["name": "Jupiter",
+     "positionFromSun": 5,
+     "fractionOfEarthMass": 318.0,
+     "distanceFromSunInAUs": 5.2,
+     "hasRings": false],
+    ["name": "Saturn",
+     "positionFromSun": 6,
+     "fractionOfEarthMass": 95.0,
+     "distanceFromSunInAUs": 9.5,
+     "hasRings": true],
+    ["name": "Uranus",
+     "positionFromSun": 7,
+     "fractionOfEarthMass": 14.0,
+     "distanceFromSunInAUs": 19.2,
+     "hasRings": false],
+    ["name": "Neptune",
+     "positionFromSun": 8,
+     "fractionOfEarthMass": 17.0,
+     "distanceFromSunInAUs": 30.1,
+     "hasRings": false]
 ]
 
 struct Planet {
     let name: String
     let positionFromSun: Int
-    let diameterInKMs: Float
-    let distanceFromSunInKMs: Float
+    let fractionOfEarthMass: Double
+    let distanceFromSunInKMs: Double
     let hasRings: Bool
 }
 
 func makePlanet(fromInput input: [String: Any]) -> Planet? {
-    
+ 
     guard
         let name = input["name"] as? String,
         let positionFromSun = input["positionFromSun"] as? Int,
-        let diameterInKMs = input["diameterInKMs"] as? Float,
-        let distanceFromSunInKMs = input["distanceFromSunInAUs"] as? Float,
+        let fractionOfEarthMass = input["fractionOfEarthMass"] as? Double,
+        let distanceFromSunInKMs = input["distanceFromSunInAUs"] as? Double,
         let hasRings = input["hasRings"] as? Bool
         else {
             return nil
-    }
-    
+        }
+ 
     return Planet(name: name,
                   positionFromSun: positionFromSun,
-                  diameterInKMs: diameterInKMs,
+                  fractionOfEarthMass: fractionOfEarthMass,
                   distanceFromSunInKMs: distanceFromSunInKMs,
                   hasRings: hasRings)
 }
@@ -51,4 +83,4 @@ func makePlanets(fromInput input: [[String: Any]]) -> [Planet] {
     return planets
 }
 
-
+let planets = makePlanets(fromInput: inputData)
