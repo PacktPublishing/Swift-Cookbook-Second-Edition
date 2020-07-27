@@ -98,10 +98,10 @@ extension CLLocation: TransportLocation {
     }
 }
 
-let start = CLLocation(latitude: 51.476853, longitude: -0.0005002)
-let end = CLLocation(latitude: 51.4218504, longitude: -0.0723853)
+let start = CLLocation(latitude: 51.3994669, longitude: 0.0116888)
+let end = CLLocation(latitude: 51.2968654, longitude: 0.5053609)
 let roadJourney = Journey(method: Road.car, start: start, end: end)
 let distanceByRoad = roadJourney.distanceInKMs
 let durationByRoad = roadJourney.durationInHours
-print("Journey distance: \(distanceByTrain) km")
-print("Journey duration: \(durationByTrain) hours")
+print("Journey distance: \(distanceByRoad) km")
+print("Journey duration: \(durationByRoad) hours")
