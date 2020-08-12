@@ -10,20 +10,12 @@ func howLongUntilChristmas() -> String {
     
     var christmasComponents = DateComponents(calendar: calendar,
                                              timeZone: timeZone,
-                                             era: nil,
                                              year: yearOfNextChristmas,
                                              month: 12,
                                              day: 25,
                                              hour: 0,
                                              minute: 0,
-                                             second: 0,
-                                             nanosecond: 0,
-                                             weekday: nil,
-                                             weekdayOrdinal: nil,
-                                             quarter: nil,
-                                             weekOfMonth: nil,
-                                             weekOfYear: nil,
-                                             yearForWeekOfYear: nil)
+                                             second: 0)
     
     var christmas = christmasComponents.date!
     // If we have already had Christmas this year,
