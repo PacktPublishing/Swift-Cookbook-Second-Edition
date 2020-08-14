@@ -17,6 +17,6 @@ let task = session.dataTask(with: request) { (data, response, error) in
     guard let imageData = data else {
         return // No Image, handle error
     }
-    let image = UIImage(data: imageData)
+    _ = UIImage(data: imageData)
 }
 task.resume()
