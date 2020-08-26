@@ -8,13 +8,13 @@ let five: Int  = 0b101
 let six: Int   = 0b110
 let seven: Int = 0b111
 
-let phone: Int        = 1 << 0 // 0b0000001
-let tablet: Int       = 1 << 1 // 0b0000010
-let watch: Int        = 1 << 2 // 0b0000100
-let laptop: Int       = 1 << 3 // 0b0001000
-let desktop: Int      = 1 << 4 // 0b0010000
-let tv: Int           = 1 << 5 // 0b0100000
-let brainImplant: Int = 1 << 6 // 0b1000000
+let phone: Int      = 1 << 0 // 0b0000001
+let tablet: Int     = 1 << 1 // 0b0000010
+let watch: Int      = 1 << 2 // 0b0000100
+let laptop: Int     = 1 << 3 // 0b0001000
+let desktop: Int    = 1 << 4 // 0b0010000
+let tv: Int         = 1 << 5 // 0b0100000
+let glasses: Int    = 1 << 6 // 0b1000000
 
 var supportedDevices: Int
 
@@ -31,8 +31,8 @@ func isSupported(device: Int) -> Bool {
 let phoneSupported = isSupported(device: phone)
 print(phoneSupported) // true
 
-let brainImplantSupported = isSupported(device: brainImplant)
-print(brainImplantSupported) // false
+let glassesSupported = isSupported(device: glasses)
+print(glassesSupported) // false
 
 // Logical Operators
 
