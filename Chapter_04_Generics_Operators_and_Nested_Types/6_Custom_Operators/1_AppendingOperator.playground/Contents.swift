@@ -28,6 +28,12 @@ print(appendedStringToArray)
 let appendedArray = ["three", "four"] >>> ["one", "two"]
 print(appendedArray)
 
+let appendedIntToArray = 3 >>> [1, 2]
+print(appendedIntToArray) // [1, 2, 3]
+ 
+let appendedIntArray = [3, 4] >>> [1, 2]
+print(appendedIntArray)  // [1, 2, 3, 4]
+
 
 struct Task {
     let name: String
