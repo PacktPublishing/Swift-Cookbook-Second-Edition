@@ -46,4 +46,4 @@ func fetchRepos(forUsername username: String) {
     task.resume()
 }
 
-fetchRepos(forUsername: "SwiftProgrammingCookbook")
+fetchRepos(forUsername: "PacktPublishing")
