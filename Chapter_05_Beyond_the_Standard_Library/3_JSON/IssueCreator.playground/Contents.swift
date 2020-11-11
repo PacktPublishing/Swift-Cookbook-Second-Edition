@@ -8,7 +8,7 @@ let config = URLSessionConfiguration.default
 let session = URLSession(configuration: config)
 
 enum ResponseError: Error {
-    case requestUnsucessful
+    case requestUnsuccessful
     case unexpectedResponseStructure
 }
 
@@ -40,15 +40,17 @@ func createIssue(inRepo repo: String,
         json["body"] = body
     }
     
-    // Serialise the json into Data. We can use try! as we know it is valid JSON, the try will fail
-    // if the provided JSON object contains elements that aren't valid JSON.
-    let jsonData = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+    // Serialise the json into Data. We can use try! as we know it is valid JSON.
+    // Just be aware that the this will fail if provided value can't be converted
+    // into valid JSON.
+    let jsonData = try! JSONSerialization.data(withJSONObject: json,
+                                               options: .prettyPrinted)
     request.httpBody = jsonData
     
     let task = session.dataTask(with: request) { (data, response, error) in
         
         guard let jsonData = data else {
-            completionHandler(nil, ResponseError.requestUnsucessful)
+            completionHandler(nil, ResponseError.requestUnsuccessful)
             return
         }
         
@@ -71,8 +73,8 @@ func createIssue(inRepo repo: String,
     task.resume()
 }
 
-createIssue(inRepo: "BeyondTheStandardLibrary",
-            forUser: "SwiftProgrammingCookbook",
+createIssue(inRepo: "Swift-5-Cookbook-Second-Edition",
+            forUser: "PacktPublishing",
             title: <#The title of your feedback#>,
             body: <#Extra detail#>) { (issue, error) in
                 

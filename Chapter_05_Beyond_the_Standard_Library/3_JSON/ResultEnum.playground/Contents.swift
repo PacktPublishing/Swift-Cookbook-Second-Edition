@@ -12,18 +12,13 @@ enum ResponseError: Error {
     case unexpectedResponseStructure
 }
 
-enum Result<SuccessType> {
-    case success(SuccessType)
-    case failure(Error)
-}
-
 func authHeaderValue(for token: String) -> String {
     let authorisationValue = Data("\(token):x-oauth-basic".utf8).base64EncodedString()
     return "Basic \(authorisationValue)"
 }
 
 func fetchRepos(forUsername username: String,
-                completionHandler: @escaping (Result<[[String: Any]]>) -> Void) {
+                completionHandler: @escaping (Result<[[String: Any]], Error>) -> Void) {
     
     let urlString = "https://api.github.com/users/\(username)/repos"
     let url = URL(string: urlString)!
@@ -72,7 +67,7 @@ func createIssue(inRepo repo: String,
                  forUser user: String,
                  title: String,
                  body: String?,
-                 completionHandler: @escaping (Result<[String: Any]>) -> Void) {
+                 completionHandler: @escaping (Result<[String: Any], Error>) -> Void) {
     
     // Create the URL and Request
     
@@ -127,7 +122,7 @@ func createIssue(inRepo repo: String,
     task.resume()
 }
 
-fetchRepos(forUsername: "SwiftProgrammingCookbook", completionHandler: { result in
+fetchRepos(forUsername: "PacktPublishing", completionHandler: { result in
     switch result {
     case .success(let repos):
         print(repos)
@@ -137,8 +132,8 @@ fetchRepos(forUsername: "SwiftProgrammingCookbook", completionHandler: { result 
     }
 })
 
-createIssue(inRepo: "BeyondTheStandardLibrary",
-            forUser: "SwiftProgrammingCookbook",
+createIssue(inRepo: "Swift-5-Cookbook-Second-Edition",
+            forUser: "PacktPublishing",
             title: <#The title of your feedback#>,
             body: <#Extra detail#>) { result in
 
