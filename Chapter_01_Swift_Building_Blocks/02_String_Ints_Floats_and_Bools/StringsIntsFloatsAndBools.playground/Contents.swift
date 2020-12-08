@@ -1,14 +1,13 @@
-
 let phrase: String = "The quick brown fox jumps over the lazy dog"
 let numberOfFoxes: Int = 1
 let numberOfAnimals: Int = 2
 
 let averageCharactersPerWord: Float = (3+5+5+3+5+4+3+4+3) / 9
-print(averageCharactersPerWord) // 43
+print(averageCharactersPerWord) // 3.888889
 
 /*
- phrase = "The quick brown ? jumps over the lazy ?" // Doesn't compile
- */
+phrase = "The quick brown ? jumps over the lazy ?" // Doesn't compile
+*/
 
 var anotherPhrase = phrase
 anotherPhrase = "The quick brown 🦊 jumps over the lazy 🐶"
@@ -28,7 +27,6 @@ Why is the following phrase often used?
 "The quick brown fox jumps over the lazy dog"
 This phrase contains every letter in the alphabet.
 """
-
 let phrasesAreEqual = phrase == anotherPhrase
 print(phrasesAreEqual) // false
 
