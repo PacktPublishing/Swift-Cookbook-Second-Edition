@@ -11,7 +11,7 @@ enum CommunicationMethod {
     case fax
     case telepathy
     case subSpaceRelay
-    case quantumEntanglement
+    case tachyons
 }
 
 class Person {
@@ -47,7 +47,7 @@ crewDirectory[.chiefEngineer] = Person(givenName: "Georgi", familyName: "LaForge
 crewDirectory[.secondOfficer] = Person(givenName: "Data", familyName: "Soong", commsMethod: .fax)
 crewDirectory[.councillor] = Person(givenName: "Deanna", familyName: "Troy", commsMethod: .telepathy)
 crewDirectory[.securityOfficer] = Person(givenName: "Tasha", familyName: "Yar", commsMethod: .subSpaceRelay)
-crewDirectory[.chiefMedicalOfficer] = Person(givenName: "Beverly", familyName: "Crusher", commsMethod: .quantumEntanglement)
+crewDirectory[.chiefMedicalOfficer] = Person(givenName: "Beverly", familyName: "Crusher", commsMethod: .tachyons)
 
 let roles = Array(crewDirectory.keys)
 print(roles)

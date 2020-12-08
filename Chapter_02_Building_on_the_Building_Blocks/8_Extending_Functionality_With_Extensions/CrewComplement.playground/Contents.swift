@@ -36,5 +36,5 @@ intableThings.append(CrewComplement.enterpriseD)
 intableThings.append(CrewComplement.voyager)
 intableThings.append(CrewComplement.deepSpaceNine)
 
-let over1000 = intableThings.flatMap { $0.intValue > 1000 ? $0.intValue: nil }
+let over1000 = intableThings.compactMap { $0.intValue > 1000 ? $0.intValue: nil }
 print(over1000) 

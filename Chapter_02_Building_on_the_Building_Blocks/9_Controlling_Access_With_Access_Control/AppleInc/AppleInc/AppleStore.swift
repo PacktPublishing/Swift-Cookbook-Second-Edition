@@ -1,12 +1,9 @@
 
 public enum DeviceModel {
-    case iPhoneSE
-    case iPhone6
-    case iPhone6Plus
-    case iPhone6S
-    case iPhone6SPlus
-    case iPhone7
-    case iPhone7Plus
+    case iPhone12
+    case iPhone12Mini
+    case iPhone12Pro
+    case iPhone12ProMax
 }
 
 public class AppleiPhone {

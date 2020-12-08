@@ -3,8 +3,8 @@
 
 let fibonacciArray: Array<Int> = [1, 1, 2, 3, 5, 8, 13, 21, 34]
 let fibonacciSet: Set<Int> = [1, 1, 2, 3, 5, 8, 13, 21, 34]
-print(fibonacciArray.count) // 10
-print(fibonacciSet.count) // 9
+print(fibonacciArray.count) // 9
+print(fibonacciSet.count) // 8
 
 // Insert, Remove and Contains
 

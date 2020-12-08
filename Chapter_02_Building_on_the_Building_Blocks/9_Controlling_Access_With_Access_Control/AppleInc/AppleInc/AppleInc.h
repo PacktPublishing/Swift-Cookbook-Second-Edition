@@ -2,11 +2,10 @@
 //  AppleInc.h
 //  AppleInc
 //
-//  Created by Keith Moon on 07/07/2017.
-//  Copyright © 2017 Data Ninjitsu. All rights reserved.
+//  Created by Keith Moon on 08/12/2020.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for AppleInc.
 FOUNDATION_EXPORT double AppleIncVersionNumber;
