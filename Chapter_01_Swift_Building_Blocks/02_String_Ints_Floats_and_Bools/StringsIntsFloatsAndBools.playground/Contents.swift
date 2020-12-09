@@ -3,7 +3,7 @@ let numberOfFoxes: Int = 1
 let numberOfAnimals: Int = 2
 
 let averageCharactersPerWord: Float = (3+5+5+3+5+4+3+4+3) / 9
-print(averageCharactersPerWord) // 3.888889
+print(averageCharactersPerWord) // 3.8888888
 
 /*
 phrase = "The quick brown ? jumps over the lazy ?" // Doesn't compile
