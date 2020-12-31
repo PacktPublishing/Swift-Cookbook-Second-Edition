@@ -1,42 +1,33 @@
+import Fluent
 import Vapor
 
-var tasks = [Task]()
-
-extension Droplet {
-    func setupRoutes() throws {
-        get("hello") { req in
-            var json = JSON()
-            try json.set("hello", "world")
-            return json
-        }
-
-        get("plaintext") { req in
-            return "Hello, world!"
-        }
-
-        // response to requests to /info domain
-        // with a description of the request
-        get("info") { req in
-            return req.description
-        }
-
-        get("description") { req in return req.description }
-        
-        try resource("posts", PostController.self)
-        
-        post("task") { request in
-            
-            guard let json = request.json else {
-                throw Abort.badRequest
-            }
-            
-            let task = try Task(json: json)
-            tasks.append(task)
-            return try task.makeJSON()
-        }
-        
-        get("task") { request in
-            return try tasks.makeJSON()
-        }
+func routes(_ app: Application) throws {
+    app.get { req in
+        return "It works!"
     }
+
+    app.get("hello") { req -> String in
+        return "Hello, world!"
+    }
+    
+    app.webSocket("talk-back") { req, ws in
+        
+        ws.onText { ws, text in
+            if text.lowercased() == "hello" {
+                ws.send("Is it me your are looking for...?")
+                ws.send([1, 2, 3])
+            }
+        }
+        
+        ws.onPong { (ws) in
+            // Pong
+        }
+        
+        ws.onPing { (ws) in
+            // Ping
+        }
+        
+    }
+    
+    try app.register(collection: TaskControllerAPI())
 }

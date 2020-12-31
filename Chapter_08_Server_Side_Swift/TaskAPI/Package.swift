@@ -1,21 +1,39 @@
+// swift-tools-version:5.2
 import PackageDescription
 
 let package = Package(
     name: "TaskAPI",
-    targets: [
-        Target(name: "App"),
-        Target(name: "Run", dependencies: ["App"]),
+    platforms: [
+       .macOS(.v10_15)
     ],
     dependencies: [
-        .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 2),
-        .Package(url: "https://github.com/vapor/fluent-provider.git", majorVersion: 1)
+        // 💧 A server-side Swift web framework.
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
+        .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
+        .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.0.0"),
+        .package(url: "https://github.com/Kitura/BlueSocket.git", from: "1.0.0"),
+        .package(path: "/Users/chris/Source/Swift-5-Cookbook-Second-Edition/Chapter_08_Server_Side_Swift/TaskModule")
     ],
-    exclude: [
-        "Config",
-        "Database",
-        "Localization",
-        "Public",
-        "Resources",
+    targets: [
+        .target(
+            name: "App",
+            dependencies: [
+                .product(name: "Fluent", package: "fluent"),
+                .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "TaskModule", package: "TaskModule"),
+            ],
+            swiftSettings: [
+                // Enable better optimizations when building in Release configuration. Despite the use of
+                // the `.unsafeFlags` construct required by SwiftPM, this flag is recommended for Release
+                // builds. See <https://github.com/swift-server/guides#building-for-production> for details.
+                .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
+            ]
+        ),
+        .target(name: "Run", dependencies: [.target(name: "App")]),
+        .testTarget(name: "AppTests", dependencies: [
+            .target(name: "App"),
+            .product(name: "XCTVapor", package: "vapor"),
+        ])
     ]
 )
-

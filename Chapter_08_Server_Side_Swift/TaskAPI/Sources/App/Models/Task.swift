@@ -1,51 +1,33 @@
 //
-//  Task.swift
-//  App
+//  File.swift
+//  
 //
-//  Created by Keith Moon on 18/09/2017.
+//  Created by Chris Barker on 21/12/2020.
 //
 
 import Foundation
-import JSON
+import Vapor
+import Fluent
 
-final class Task: JSONConvertible {
+final class Task: Content, Model {
     
-    enum Error: Swift.Error {
-        case expectedJSONData
-    }
+    static let schema = "task"
     
-    var id: String
+    @ID(key: .id)
+    var id: UUID?
+    
+    @Field(key: "description")
     var description: String
+    
+    @Field(key: "category")
     var category: String
     
-    init(id: String, description: String, category: String) {
+    init() { }
+
+    init(id: UUID? = nil, description: String, category: String) {
         self.id = id
         self.description = description
         self.category = category
     }
     
-    required init(json: JSON) throws {
-        
-        guard
-            let description = json["description"]?.string,
-            let category = json["category"]?.string else {
-                throw Error.expectedJSONData
-        }
-        self.description = description
-        self.category = category
-        
-        if let id = json["id"]?.string {
-            self.id = id
-        } else {
-            self.id = UUID().uuidString
-        }
-    }
-    
-    func makeJSON() throws -> JSON {
-        var json = JSON()
-        try json.set("id", id)
-        try json.set("description", description)
-        try json.set("category", category)
-        return json
-    }
 }
