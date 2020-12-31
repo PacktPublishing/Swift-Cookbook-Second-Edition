@@ -1,4 +1,3 @@
-
 import AppleInc
 
 //
@@ -7,7 +6,7 @@ import AppleInc
 class WinSwift: SwiftLanguage {
     
     override func versionNumber() -> Float {
-        return 5.0
+        return 5.3
     }
     
     override func supportedPlatforms() -> [String] {
@@ -36,7 +35,7 @@ let jony = Person(name: "Jony Ive")
 //
 
 // Buy new iPhone
-let boughtiPhone = apple.store.selliPhone(ofModel: .iPhone6S)
+let boughtiPhone = apple.store.selliPhone(ofModel: .iPhone12ProMax)
 // This works
 
 // Try and create your own iPhone

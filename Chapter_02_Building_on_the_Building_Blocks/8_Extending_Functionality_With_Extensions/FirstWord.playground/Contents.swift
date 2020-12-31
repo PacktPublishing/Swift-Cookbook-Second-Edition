@@ -1,9 +1,9 @@
 
 extension String {
     func firstWord() -> String {
-        let firstSpace = index(of: " ") ?? endIndex
-        let firstNameSubString = prefix(upTo: firstSpace)
-        return String(firstNameSubString)
+        let spaceIndex = firstIndex(of: " ") ?? endIndex
+        let word = prefix(upTo: spaceIndex)
+        return String(word)
     }
 }
 

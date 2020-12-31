@@ -88,8 +88,8 @@ class SaveManager {
     }
 }
 
-let colin = createPerson("Colin", "Alfred", "Moon") // This closure was covered in the previous recipe
-let birthdayReminder = Reminder(date: "27/11/1982", detail: "Colin's Birthday")
+let nick = createPerson("Nick", "Edward", "Moon") // This closure was covered in the previous recipe
+let birthdayReminder = Reminder(date: "12/06/2008", detail: "Nick's Birthday")
 let saveManager = SaveManager()
-saveManager.save(colin)
+saveManager.save(nick)
 saveManager.save(birthdayReminder)

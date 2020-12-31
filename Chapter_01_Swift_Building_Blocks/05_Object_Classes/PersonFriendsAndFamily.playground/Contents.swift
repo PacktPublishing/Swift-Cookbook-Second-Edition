@@ -25,30 +25,57 @@ final class Friend: Person {
     var whereWeMet: String?
     
     override var displayString: String {
-        return "\(super.displayString) - \(whereWeMet ?? "Don't know where we met")"
+        let meetingPlace = whereWeMet ?? "Don't know where we met"
+        return "\(super.displayString) - \(meetingPlace)"
     }
 }
 
 final class Family: Person {
     let relationship: String
     
-    init(givenName: String, middleName: String, familyName: String = "Moon", relationship: String) {
-        self.relationship = relationship
-        super.init(givenName: givenName, middleName: middleName, familyName: familyName)
-    }
+    init(givenName: String,
+             middleName: String,
+             familyName: String = "Moon",
+             relationship: String) {
+
+            self.relationship = relationship
+            super.init(givenName: givenName,
+                       middleName: middleName,
+                       familyName: familyName)
+        } 
     
     override var displayString: String {
         return "\(super.displayString) - \(relationship)"
     }
 }
 
-let steve = Person(givenName: "Steven", middleName: "Paul", familyName: "Jobs")
-let dan = Friend(givenName: "Daniel", middleName: "James", familyName: "Woodel")
-dan.whereWeMet = "Worked together at BBC News"
-let finnley = Family(givenName: "Finnley", middleName: "David", relationship: "Son")
-let dave = Family(givenName: "Dave", middleName: "deRidder", familyName: "Jones", relationship: "Father-In-Law")
-dave.countryOfResidence = "US"
+let steve = Person(givenName: "Steven",
+                   middleName: "Paul",
+                   familyName: "Jobs")
 
-print(steve.displayString) // Steven Paul Jobs
-print(dan.displayString) // Daniel James Woodel - Worked together at BBC News
-print(finnley.displayString) // Finnley David Moon - Son
+let richard = Friend(givenName: "Richard",
+                     middleName: "Adrian",
+                     familyName: "Das")
+richard.whereWeMet = "Worked together at Travel Supermarket"
+
+let finnley = Family(givenName: "Finnley",
+                     middleName: "David",
+                     relationship: "Son")
+
+let dave = Family(givenName: "Dave",
+                  middleName: "deRidder",
+                  familyName: "Jones",
+                  relationship: "Father-In-Law")
+dave.countryOfResidence = "US"
+ 
+print(steve.displayString)
+// Steven Paul Jobs
+
+print(richard.displayString)
+// Richard Adrian Das - Worked together at Travel Supermarket
+
+print(finnley.displayString)
+// Finnley David Moon - Son
+
+print(dave.displayString)
+// Dave deRidder Jones - Father-In-Law

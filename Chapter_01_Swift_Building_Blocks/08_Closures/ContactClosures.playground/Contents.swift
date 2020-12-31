@@ -61,5 +61,5 @@ let createPerson: (String, String, String) -> Person = { given, middle, family i
     let person = Person(name: name)
     return person
 }
-let melody = createPerson("Melody", "Margaret", "Moon")
-print(melody.displayString) // "Melody Margaret Moon - Location: UK"
+let felix = createPerson("Felix", "Robert", "Moon")
+print(felix.displayString) // "Felix Robert Moon - Location: UK"

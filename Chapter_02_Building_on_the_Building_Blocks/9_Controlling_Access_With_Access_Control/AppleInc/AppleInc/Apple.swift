@@ -29,7 +29,7 @@ public class Apple {
         var superSecretProduct = secretDepartment.nextProduct(givenCodeWord: "Not sure... Abracadabra?") // nil
         
         // Try again
-        superSecretProduct = secretDepartment.nextProduct(givenCodeWord: "Titan") // "iPhone 8"
-        print(superSecretProduct as Any)
+        superSecretProduct = secretDepartment.nextProduct(givenCodeWord: "Titan")
+        print(superSecretProduct as Any) // "Apple Glasses"
     }
 }

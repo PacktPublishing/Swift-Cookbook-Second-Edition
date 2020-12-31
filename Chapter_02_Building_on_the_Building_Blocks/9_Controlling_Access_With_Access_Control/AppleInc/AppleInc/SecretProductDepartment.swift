@@ -2,10 +2,9 @@
 class SecretProductDepartment {
     
     private var secretCodeWord = "Titan"
-    private var secretProducts = ["iPhone 8",
+    private var secretProducts = ["Apple Glasses",
                                   "Apple Car",
-                                  "Apple Brain Implant",
-                                  "Apple Spaceship"]
+                                  "Apple Brain Implant"] 
     
     func nextProduct(givenCodeWord codeWord: String) -> String? {
         let codeCorrect = codeWord == secretCodeWord

@@ -49,7 +49,7 @@ let createPerson: (String, String, String) -> Person = { given, middle, family i
     return person
 }
 
-let dave = createPerson("David", "Ernest", "Moon")
-dave.saveToRemoteDatabase(handler: { success in
+let fox = createPerson("Fox", "Richard", "Moon")
+fox.saveToRemoteDatabase(handler: { success in
     print("Saved finished. Successful: \(success))")
 })
