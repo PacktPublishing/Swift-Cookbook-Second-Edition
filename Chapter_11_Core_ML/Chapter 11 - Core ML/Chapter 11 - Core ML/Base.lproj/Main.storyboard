@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vision View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="VisionViewController" customModule="Chapter_11___Core_ML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-6s-c99">
+                                <rect key="frame" x="16" y="86" width="382" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Yjp-Bh-8XA"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Photo /  Camera Roll"/>
+                                    <segment title="Live Camera"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onInputTypeSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="ui2-IK-m3e"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gxg-Jc-B0k">
+                                <rect key="frame" x="16" y="193" width="382" height="591"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-Rs-iy6">
+                                <rect key="frame" x="156" y="800" width="102" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="7Xa-gz-zQm"/>
+                                    <constraint firstAttribute="height" constant="46" id="DQ3-5t-ZCa"/>
+                                </constraints>
+                                <state key="normal" title="Select Photo"/>
+                                <connections>
+                                    <action selector="onSelectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ktv-Lb-sK7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tq1-Z9-6CF">
+                                <rect key="frame" x="16" y="133" width="382" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8gQ-tW-ZMr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q5f-Rs-iy6" secondAttribute="bottom" constant="16" id="3K9-la-TV3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tq1-Z9-6CF" secondAttribute="trailing" constant="16" id="5cj-pT-ESf"/>
+                            <constraint firstItem="Tq1-Z9-6CF" firstAttribute="top" secondItem="sZq-6s-c99" secondAttribute="bottom" constant="16" id="Eku-cO-duM"/>
+                            <constraint firstItem="Tq1-Z9-6CF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Glj-0f-0Ka"/>
+                            <constraint firstItem="sZq-6s-c99" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ID4-KM-R7Z"/>
+                            <constraint firstItem="Gxg-Jc-B0k" firstAttribute="top" secondItem="Tq1-Z9-6CF" secondAttribute="bottom" constant="16" id="SXI-h4-KIu"/>
+                            <constraint firstItem="q5f-Rs-iy6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i4M-ih-1n3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sZq-6s-c99" secondAttribute="trailing" constant="16" id="jeU-ve-lTw"/>
+                            <constraint firstItem="sZq-6s-c99" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="lXq-Qm-bvi"/>
+                            <constraint firstItem="Gxg-Jc-B0k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ttE-n1-nzP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gxg-Jc-B0k" secondAttribute="trailing" constant="16" id="wFq-Z2-Xnz"/>
+                            <constraint firstItem="q5f-Rs-iy6" firstAttribute="top" secondItem="Gxg-Jc-B0k" secondAttribute="bottom" constant="16" id="yOa-QC-nPC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Gxg-Jc-B0k" id="b1X-uH-mmE"/>
+                        <outlet property="labelView" destination="Tq1-Z9-6CF" id="K3Y-Gg-RCd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="130.58035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
