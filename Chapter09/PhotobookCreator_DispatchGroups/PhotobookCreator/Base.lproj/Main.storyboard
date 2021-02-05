@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F67a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eCW-ri-06G">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photos-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PhotoCollectionViewController" customModule="PhotobookCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oSF-vd-jgh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhotoCell" textLabel="cK6-jI-iUO" style="IBUITableViewCellStyleDefault" id="MKz-RL-RS9">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKz-RL-RS9" id="Ug8-qR-wR7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cK6-jI-iUO">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="79.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aNa-V6-790"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fja-E2-rll"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fao-iB-Hmo">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mNm-PG-2mK"/>
+                                    <barButtonItem title="Generate Photo Book" id="5UU-SF-F5g">
+                                        <connections>
+                                            <action selector="generateButtonPressedWithSender:" destination="BYZ-38-t0r" id="nCt-Sy-17d"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nDs-1O-8bv"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oSF-vd-jgh" secondAttribute="trailing" id="O5h-eD-0vg"/>
+                            <constraint firstItem="fao-iB-Hmo" firstAttribute="top" secondItem="oSF-vd-jgh" secondAttribute="bottom" id="emP-Yu-CCA"/>
+                            <constraint firstAttribute="trailing" secondItem="fao-iB-Hmo" secondAttribute="trailing" id="f0z-id-K3z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fao-iB-Hmo" secondAttribute="bottom" id="hYR-2h-CPW"/>
+                            <constraint firstItem="fao-iB-Hmo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hk7-gg-Jd7"/>
+                            <constraint firstItem="oSF-vd-jgh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jVC-hU-H4n"/>
+                            <constraint firstItem="oSF-vd-jgh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vM9-f7-SzY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photos" id="RsG-OM-mLV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Z9y-y4-Utc">
+                            <connections>
+                                <action selector="addButtonPressedWithSender:" destination="BYZ-38-t0r" id="ZHr-8L-HRW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="oSF-vd-jgh" id="cZa-pn-RrM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="783.95802098950526"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VC7-EX-uX9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eCW-ri-06G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5cQ-SN-dhh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ENe-Zv-i5B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGH-Fx-dN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="783.95802098950526"/>
+        </scene>
+    </scenes>
+</document>

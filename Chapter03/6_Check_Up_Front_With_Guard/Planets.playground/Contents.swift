@@ -47,7 +47,7 @@ struct Planet {
     let name: String
     let positionFromSun: Int
     let fractionOfEarthMass: Double
-    let distanceFromSunInKMs: Double
+    let distanceFromSunInAUs: Double
     let hasRings: Bool
 }
 
@@ -57,7 +57,7 @@ func makePlanet(fromInput input: [String: Any]) -> Planet? {
         let name = input["name"] as? String,
         let positionFromSun = input["positionFromSun"] as? Int,
         let fractionOfEarthMass = input["fractionOfEarthMass"] as? Double,
-        let distanceFromSunInKMs = input["distanceFromSunInAUs"] as? Double,
+        let distanceFromSunInAUs = input["distanceFromSunInAUs"] as? Double,
         let hasRings = input["hasRings"] as? Bool
         else {
             return nil
@@ -66,7 +66,7 @@ func makePlanet(fromInput input: [String: Any]) -> Planet? {
     return Planet(name: name,
                   positionFromSun: positionFromSun,
                   fractionOfEarthMass: fractionOfEarthMass,
-                  distanceFromSunInKMs: distanceFromSunInKMs,
+                  distanceFromSunInAUs: distanceFromSunInAUs,
                   hasRings: hasRings)
 }
 

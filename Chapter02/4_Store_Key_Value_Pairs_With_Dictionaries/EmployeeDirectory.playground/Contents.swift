@@ -29,23 +29,23 @@ class Person {
     }
 }
 
-var crewDirectory = Dictionary<String, Person>()
+var crew = Dictionary<String, Person>()
 
-crewDirectory["Captain"] = Person(givenName: "Jean-Luc", familyName: "Picard", commsMethod: .phone)
-crewDirectory["First Officer"] = Person(givenName: "William", familyName: "Riker", commsMethod: .email)
-crewDirectory["Chief Engineer"] = Person(givenName: "Georgi", familyName: "LaForge", commsMethod: .textMessage)
-crewDirectory["Second Officer"] = Person(givenName: "Data", familyName: "Soong", commsMethod: .fax)
-crewDirectory["Councillor"] = Person(givenName: "Deanna", familyName: "Troy", commsMethod: .telepathy)
-crewDirectory["Security Officer"] = Person(givenName: "Tasha", familyName: "Yar", commsMethod: .subSpaceRelay)
-crewDirectory["Chief Medical Officer"] = Person(givenName: "Beverly", familyName: "Crusher", commsMethod: .tachyons)
+crew["Captain"] = Person(givenName: "Jean-Luc", familyName: "Picard", commsMethod: .phone)
+crew["First Officer"] = Person(givenName: "William", familyName: "Riker", commsMethod: .email)
+crew["Chief Engineer"] = Person(givenName: "Georgi", familyName: "LaForge", commsMethod: .textMessage)
+crew["Second Officer"] = Person(givenName: "Data", familyName: "Soong", commsMethod: .fax)
+crew["Councillor"] = Person(givenName: "Deanna", familyName: "Troy", commsMethod: .telepathy)
+crew["Security Officer"] = Person(givenName: "Tasha", familyName: "Yar", commsMethod: .subSpaceRelay)
+crew["Chief Medical Officer"] = Person(givenName: "Beverly", familyName: "Crusher", commsMethod: .tachyons)
 
-let roles = Array(crewDirectory.keys)
+let roles = Array(crew.keys)
 print(roles)
 
 let firstRole = roles.first! // Chief Medical Officer
-let cmo = crewDirectory[firstRole]! // Person: Beverly Crusher
+let cmo = crew[firstRole]! // Person: Beverly Crusher
 print("\(firstRole): \(cmo.name.givenName) \(cmo.name.familyName)") // Chief Medical Officer: Beverly Crusher
 
-print(crewDirectory["Security Officer"]!.name.givenName) // Tasha
-crewDirectory["Security Officer"] = Person(givenName: "Worf", familyName: "Son of Mogh", commsMethod: .subSpaceRelay)
-print(crewDirectory["Security Officer"]!.name.givenName) // Worf
+print(crew["Security Officer"]!.name.givenName) // Tasha
+crew["Security Officer"] = Person(givenName: "Worf", familyName: "Son of Mogh", commsMethod: .subSpaceRelay)
+print(crew["Security Officer"]!.name.givenName) // Worf
