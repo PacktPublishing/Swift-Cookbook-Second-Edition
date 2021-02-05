@@ -13,9 +13,11 @@ enum CoinFlip: Int {
 func howManyHeadsInARow() -> Int {
     
     var numberOfHeadsInARow = 0
+    var currentCoinFlip = CoinFlip.flipCoin()
     
-    while CoinFlip.flipCoin() == .heads {
+    while currentCoinFlip == .heads {
         numberOfHeadsInARow = numberOfHeadsInARow + 1
+        currentCoinFlip = CoinFlip.flipCoin()
     }
     return numberOfHeadsInARow
 }
