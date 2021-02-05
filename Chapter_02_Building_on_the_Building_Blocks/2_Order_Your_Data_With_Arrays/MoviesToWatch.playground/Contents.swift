@@ -90,6 +90,3 @@ print(index10 as Any) // nil
 
 let evenNumbersTo10 = [2, 4, 6, 8, 10]
 //evenNumbersTo10.append(12) // Doesn't compile
-
-var evenNumbersTo12 = evenNumbersTo10
-evenNumbersTo12.append(12) // Does compile
