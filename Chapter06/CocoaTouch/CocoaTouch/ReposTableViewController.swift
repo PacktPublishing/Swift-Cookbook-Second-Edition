@@ -25,7 +25,7 @@ enum FetchReposResult {
 }
 
 enum ResponseError: Error {
-    case requestUnsucessful
+    case requestUnsuccessful
     case unexpectedResponseStructure
 }
 
@@ -81,7 +81,7 @@ class ReposTableViewController: UITableViewController {
             
             // First unwrap the optional data
             guard let data = data else {
-                completionHandler(.failure(ResponseError.requestUnsucessful))
+                completionHandler(.failure(ResponseError.requestUnsuccessful))
                 return
             }
             
