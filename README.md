@@ -44,7 +44,7 @@ With the following software and hardware list you can run all code files present
 | Chapter  | Software required                   | OS required                        |
 | -------- | ------------------------------------| -----------------------------------|
 | 1 to 11       | macOS                   | 10.15.4+ (Catalina) |
-| 1 to 11      | Xcode           | macOS |
+| 1 to 11      | Xcode 12+         | macOS |
 | 8   | Ubuntu             | 20.04 LTS |
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781839211195_ColorImages.pdf).
