@@ -35,7 +35,7 @@ if (test expression)
 ```
 
 **Following is what you need for this book:**
-Copy and paste the Audience section from the EPIC.
+If you are looking to get started with Swift 5.3 or want to learn about the diverse features it offers, along with tips and tricks to efficiently code and build applications, then this book is for you. Basic knowledge of general programming concepts will assist with understanding key concepts.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-11).
 
