@@ -1,8 +1,8 @@
-# Swift 5.3 Cookbook - Second Edition
+# Swift Cookbook - Second Edition
 
-<a href="https://www.packtpub.com/product/swift-5-3-cookbook-second-edition/9781839211195"><img src="https://static.packt-cdn.com/products/9781839211195/cover/smaller" alt="Swift 5.3 Cookbook - Second Edition" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/product/swift-5-3-cookbook-second-edition/9781839211195"><img src="https://static.packt-cdn.com/products/9781839211195/cover/smaller" alt="Swift Cookbook - Second Edition" height="256px" align="right"></a>
 
-This is the code repository for [Swift 5.3 Cookbook - Second Edition](https://www.packtpub.com/product/swift-5-3-cookbook-second-edition/9781839211195), published by Packt.
+This is the code repository for [Swift Cookbook - Second Edition](https://www.packtpub.com/product/swift-5-3-cookbook-second-edition/9781839211195), published by Packt.
 
 **Over 60 actionable solutions to common problems in iOS app development with Swift 5.3**
 
