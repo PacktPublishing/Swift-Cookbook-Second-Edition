@@ -4,7 +4,7 @@
 
 This is the code repository for [Swift 5.3 Cookbook - Second Edition](https://www.packtpub.com/product/swift-5-3-cookbook-second-edition/9781839211195), published by Packt.
 
-**Over 60 proven recipes for developing better iOS applications with Swift 5.3**
+**Over 60 actionable solutions to common problems in iOS app development with Swift 5.3**
 
 ## What is this book about?
 The book begins with an introduction to the basic building blocks of Swift 5.3, its syntax, and the functionalities of Swift constructs. You’ll then discover how Swift Playgrounds provide an ideal platform to write, execute, and debug your Swift code. As you advance through the chapters, the book will show you how to bundle variables into tuples or sets, order your data with an array, store key-value pairs with dictionaries, and use property observers. You’ll also learn about the decision-making and control structures in Swift, examine advanced features such as generics and operators, and explore functionalities outside of the standard library. Once you’ve learned how to build iOS applications using UIKit, you'll find out how to use Swift for server-side programming, run Swift on Linux, and investigate Vapor. Finally, you'll discover some of the newest features of Swift 5.3, using SwiftUI and Combine to build adaptive and reactive applications, and use Swift to build and integrate machine learning models along with Apple’s Vision Framework. By the end of the book, you'll have discovered direct solutions that will help you become productive while developing code using Swift 5.3.
