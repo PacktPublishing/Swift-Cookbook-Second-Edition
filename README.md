@@ -60,7 +60,7 @@ Click on the following link to see the Code in Action:
 
 * Mastering Swift 5.3 - Sixth Edition [[Packt]](https://www.packtpub.com/product/mastering-swift-5-3-sixth-edition/9781800562158) [[Amazon]](https://www.amazon.com/dp/1800562152)
 
-## Get to Know the Author(s)
+## Get to Know the Authors
 **Keith Moon**
 is an award-winning mobile developer, author and speaker based in London. He has worked with some of the biggest companies in the world to create engaging and personal mobile experiences. Keith has been developing in Swift since its release, working on projects both fully Swift, and mixed Swift and Objective-C. Keith has been invited to speak about Swift development in conferences from Moscow to Minsk and London.
 
